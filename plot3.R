@@ -7,6 +7,11 @@ power_consumption <- read.table("household_power_consumption.txt", header=TRUE,
 # Select data from dates 2007-02-01 and 2007-02-02
 pow_consum_select <- subset(power_consumption, power_consumption$Date == "1/2/2007" | power_consumption$Date == "2/2/2007")
 
+# convert Sub_metering to numeric variables
+pow_consum_select$Sub_metering_1 <- as.numeric(pow_consum_select$Sub_metering_1)
+pow_consum_select$Sub_metering_2 <- as.numeric(pow_consum_select$Sub_metering_2)
+pow_consum_select$Sub_metering_3 <- as.numeric(pow_consum_select$Sub_metering_3)
+
 # Convert the Date variable to Date class
 pow_consum_select$Date <- as.Date(pow_consum_select$Date, format="%d/%m/%Y")
 
