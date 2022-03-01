@@ -17,7 +17,7 @@ pow_consum_select$Date <- as.Date(pow_consum_select$Date, format="%d/%m/%Y")
 
 # Convert the Time variable to Time class
 x <- paste(pow_consum_select$Date, pow_consum_select$Time)
-pow_consum_select$DateTime <- strptime(x, format ="%Y-%m-%d %H:%M:%S",) 
+pow_consum_select$DateTime <- strptime(x, format ="%Y-%m-%d %H:%M:%S") 
 # Change locality 
 Sys.setlocale("LC_TIME", "C")
 str(pow_consum_select)
